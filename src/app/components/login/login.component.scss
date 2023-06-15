@@ -1,0 +1,84 @@
+#main-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.35);
+}
+
+.left-container {
+  width: 624px;
+  height: 391px;
+  position: absolute;
+  top: 50%;
+  left: 45%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0px 0px 4px grey;
+  border-radius: 1.5em;
+}
+
+.left-inner-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30vw;
+  //////////////////
+  position: relative;
+  left: 2em;
+}
+
+.right-container {
+  width: 389px;
+  // height: 425px;
+  box-shadow: 0px 0px 6px grey;
+  position: absolute;
+  top: 50%;
+  left: 60%;
+  transform: translate(-50%, -50%);
+}
+
+.book-logo {
+  width: 245px;
+  height: 245px;
+  border-radius: 50%;
+}
+
+.sign-login {
+  display: flex;
+  justify-content: space-around;
+}
+
+.login-botton-button {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.5em;
+}
+
+.fb-btn-container > .mat-mdc-raised-button.mat-primary {
+  --mdc-protected-button-container-color: #4266b2;
+  --mdc-protected-button-label-text-color: #fff;
+}
+.gg-btn,
+.fb-btn {
+  width: 140px;
+}
+
+.gg-btn-container > .mat-mdc-raised-button.mat-primary {
+  --mdc-protected-button-container-color: #e4e4e4;
+  --mdc-protected-button-label-text-color: black;
+}
+
+.login-btn > .mat-mdc-raised-button.mat-primary {
+  --mdc-protected-button-container-color: #a03037;
+  --mdc-protected-button-label-text-color: #fff;
+}
+
+.sign-btn-container > button {
+  margin-bottom: 1em;
+  width: 100%;
+}
+
+.sign-btn-container > .mat-mdc-raised-button.mat-primary {
+  --mdc-protected-button-container-color: #a03037;
+  --mdc-protected-button-label-text-color: #fff;
+}
