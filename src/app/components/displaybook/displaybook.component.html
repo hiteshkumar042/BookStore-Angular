@@ -1,0 +1,32 @@
+<div class="displaybook-main-container">
+    <div class="bookcount-sort-container">
+        <h2 class="books-heading">Books <span class="books-count">(128 Items)</span></h2>
+        <select name="" id="">
+            <option value="">Sort by relevance</option>
+        </select>
+    </div>
+
+    <div class="all-books-container">
+        <div *ngFor="let book of BookObj">
+            <mat-card class="book-card-container" [ngClass]="{ 'hovered': hoveredIndex === book._id }"
+                (mouseenter)="hoveredIndex = book._id" (mouseleave)="hoveredIndex=''" (click)="bookToDataService(book)">
+                <div class="book-image-container">
+                    <div><img src="../../../assets/book image/Image 11.png" alt=""></div>
+                </div>
+                <div class="book-details-container">
+                    <div id="book-heading">{{book.bookName}}</div>
+                    <!-- <div id="book-author">by Steve Krug</div> -->
+                    <div id="book-author">{{book.author}}</div>
+                    <div id="rating-container">
+                        <div id="book-rating">4.5 *</div>
+                        <div id="book-review-count">(20)</div>
+                    </div>
+                    <div id="price-container">
+                        <div id="discounted-price">Rs. {{book.discountPrice}}</div>
+                        <div id="actual-price">Rs. {{book.price}}</div>
+                    </div>
+                </div>
+            </mat-card>
+        </div>
+    </div>
+</div>

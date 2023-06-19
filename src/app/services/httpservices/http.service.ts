@@ -13,4 +13,12 @@ export class HttpService {
     return this.httpClient.post(this.BaseUrl+url,reqBody,reqHeaders)
   }
 
+  getService(url:string,reqHeaders:any){
+    return this.httpClient.get(this.BaseUrl+url,reqHeaders)
+  }
+
+  updateService(url: string, reqPayload: any,httpAuthOptions: any){
+    return this.httpClient.put(this.BaseUrl + url, reqPayload, httpAuthOptions);
+  }
+
 }

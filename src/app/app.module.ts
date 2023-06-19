@@ -13,11 +13,19 @@ import {MatIconModule} from '@angular/material/icon';
 import {FormsModule,ReactiveFormsModule} from '@angular/forms'
 import {HttpClientModule} from '@angular/common/http'
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { DisplaybookComponent } from './components/displaybook/displaybook.component';
+import { BookdetailsComponent } from './components/bookdetails/bookdetails.component';
+import { AllbooksComponent } from './components/allbooks/allbooks.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    DashboardComponent,
+    DisplaybookComponent,
+    BookdetailsComponent,
+    AllbooksComponent,
   ],
   imports: [
     BrowserModule,BrowserAnimationsModule, AppRoutingModule,

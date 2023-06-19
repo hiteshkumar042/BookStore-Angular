@@ -1,0 +1,91 @@
+<div class="book-details-main">
+    <div class="bookcount-home">
+        <h2 class="books-home" (click)="home()">Home / </h2>
+        <h2 class="books-count"> &nbsp; Book(01)</h2>
+    </div>
+    <div class="book-details-center">
+        <div class="left-left-container">
+        <div class="left-book-icon">
+            <div class="image-1">
+                <img src="../../../assets/bookdetails-s1/Image 1.png" alt="">
+            </div>
+            <div class="image-2">
+                <img src="../../../assets/bookdetails-2/Image 46.png" alt="">
+            </div>
+        </div>
+        <div class="bookimage-btns">
+            <div class="left-book">
+                <img src="../../../assets/book image/Image 11@2x.png" alt="">
+            </div>
+            <div class="addtocart-wish-btn">
+                <button *ngIf="show" (click)="AddToCart()" class="add-to-cart-btn">Add to bag</button>
+                <div class="books-Qty" *ngIf="!show">
+                    <button class="Qty-btn" [disabled]="qtyToBuy === 1" (click)=" decreaseQty()">-</button>
+                    <div class="book-qty-count">{{qtyToBuy}}</div>
+                    <button class="Qty-btn" (click)="increaseQty()">+</button>
+                </div>
+                <button class="wishlist-btn" (click)="AddToWhishlist()"> <span><mat-icon class="wishlist-mat">favorite</mat-icon></span>
+                    Wishlist</button>
+            </div>
+        </div>
+    </div>
+
+
+        <div class="right-book">
+            <div class="book-title">{{bookInfo.bookName}}</div>
+            <div class="book-author">{{bookInfo.author}}</div>
+            <div class="feedback-rating-container">
+                <div class="feedback-rating">4.5 *</div>
+                <div class="user-count">(20)</div>
+            </div>
+            <div class="price-container">
+                <div class="discounted-price">Rs.{{bookInfo.discountPrice}}</div>
+                <div class="price">Rs.{{bookInfo.price}}</div>
+            </div>
+            <hr>
+            <div class="book-desc">
+                <ul><li>Book Detail</li></ul>
+                <p class="book-desc-para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque mollitia dicta voluptate minus ea recusandae. Id aut quas enim eligendi voluptas minima eaque veniam quibusdam ex illum, eos, voluptatem accusamus fugiat vero est, cupiditate reprehenderit.</p>
+            </div>
+            <hr>
+            <div class="cc-feedback-box">
+                <div class="cc-fb-title">Customer Feedback</div>
+                <div class="feedback-container">
+                    <p class="ov-all-r">Overall rating</p>
+                    <div class="star-container">
+                        <img class="feedback-star" src="../../../assets/star_FILL0_wght400_GRAD0_opsz48.svg" alt="">
+                        <img class="feedback-star" src="../../../assets/star_FILL0_wght400_GRAD0_opsz48.svg" alt="">
+                        <img class="feedback-star" src="../../../assets/star_FILL0_wght400_GRAD0_opsz48.svg" alt="">
+                        <img class="feedback-star" src="../../../assets/star_FILL0_wght400_GRAD0_opsz48.svg" alt="">
+                        <img class="feedback-star" src="../../../assets/star_FILL0_wght400_GRAD0_opsz48.svg" alt="">
+                    </div>
+                    <textarea placeholder="Write your review" rows="5"></textarea>
+                    <div class="submit-btn-container">
+                        <button class="feedback-submit">Submit</button>
+                    </div>
+                    
+                </div>
+            </div>
+            <!-- cc review array -->
+            <div class="fb-comment-container" *ngFor="let data of CArray" >
+                <div class="group-comment-data" >
+                    <div class="fb-profile"><div>AC</div></div>
+                    <div class="fb-cc-dt">
+                        <div class="cc-name">Hitesh Kumar</div>
+                        <div class="cc-starr-fb">
+                            <img class="feedback-star" src="../../../assets/star_FILL0_wght400_GRAD0_opsz48.svg" alt="">
+                            <img class="feedback-star" src="../../../assets/star_FILL0_wght400_GRAD0_opsz48.svg" alt="">
+                            <img class="feedback-star" src="../../../assets/star_FILL0_wght400_GRAD0_opsz48.svg" alt="">
+                            <img class="feedback-star" src="../../../assets/star_FILL0_wght400_GRAD0_opsz48.svg" alt="">
+                            <img class="feedback-star" src="../../../assets/star_FILL0_wght400_GRAD0_opsz48.svg" alt="">
+                        </div>
+                        <div class="cc-fb-cmment">
+                            Good product. Even though the translation could have been better, Chanakya's neeti are thought provoking. Chanakya has written on many different topics and his writings are succinct.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

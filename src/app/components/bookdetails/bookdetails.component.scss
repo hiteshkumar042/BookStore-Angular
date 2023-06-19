@@ -1,0 +1,377 @@
+.book-details-main {
+  // border: 2px solid red;
+  width: 70vw;
+  margin: auto;
+}
+
+.bookcount-home {
+  margin: 1em 0;
+  display: flex;
+}
+.books-home {
+  text-align: left;
+  font: normal normal normal 12px/16px Roboto;
+  letter-spacing: 0px;
+  color: #9d9d9d;
+  opacity: 1;
+  cursor: pointer;
+}
+.books-count {
+  text-align: left;
+  font: normal normal normal 12px/16px Roboto;
+  letter-spacing: 0px;
+  color: #0a0102;
+  opacity: 1;
+}
+
+////center -part
+
+//First col
+.image-1 {
+  width: 44px;
+  height: 54px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* UI Properties */
+  background: #ffe7e9 0% 0% no-repeat padding-box;
+  border: 1px solid #7c1e1e;
+  border-radius: 1px 1px 1px 0px;
+  opacity: 1;
+}
+
+.image-2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 54px;
+  /* UI Properties */
+  border: 1px solid #d1d1d1;
+  border-radius: 0px 1px 1px 1px;
+  opacity: 1;
+}
+//Center part
+.book-details-center {
+  display: flex;
+  flex-wrap: wrap;
+}
+.left-book {
+  width: 361px;
+  height: 413px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  border: 1px solid #d1d1d1;
+  border-radius: 2px;
+  opacity: 1;
+}
+.left-book > img {
+  width: 282px;
+  height: 364px;
+}
+.addtocart-wish-btn {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1em;
+}
+
+.add-to-cart-btn {
+  width: 170px;
+  height: 40px;
+  background-color: #a03037;
+  text-align: center;
+  font: normal normal medium 15px/18px Lato;
+  letter-spacing: 0px;
+  color: #ffffff;
+  text-transform: uppercase;
+  opacity: 1;
+  transition: 0.2s ease-in;
+  outline: none;
+  border: none;
+}
+.add-to-cart-btn:hover {
+  cursor: pointer;
+  background-color: #b7323b;
+}
+
+.wishlist-btn {
+  width: 170px;
+  height: 40px;
+  background-color: #333333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font: normal normal medium 15px/18px Lato;
+  letter-spacing: 0px;
+  color: #ffffff;
+  text-transform: uppercase;
+  opacity: 1;
+  transition: 0.2s ease-in;
+  border: none;
+  outline: none;
+}
+
+.wishlist-btn:hover {
+  cursor: pointer;
+  background-color: #403e3e;
+}
+
+.wishlist-mat {
+  color: white;
+  margin-right: 0.5em;
+}
+
+.right-book {
+  width: 660px;
+  padding-left: 45px;
+  padding-right: 45px;
+}
+//book-details-data
+.book-title {
+  text-align: left;
+  font: normal normal normal 28px/37px Roboto;
+  letter-spacing: 0px;
+  color: #0a0102;
+  opacity: 1;
+  font-weight: bolder;
+}
+
+.book-author {
+  text-align: left;
+  font: normal normal normal 18px/24px Roboto;
+  letter-spacing: 0px;
+  color: #878787;
+  opacity: 1;
+}
+.feedback-rating-container {
+  display: flex;
+  margin: 8px 0 15px 0;
+}
+.feedback-rating {
+  width: 55px;
+  height: 25px;
+  /* UI Properties */
+  background: #388e3c 0% 0% no-repeat padding-box;
+  border-radius: 1px;
+  opacity: 1;
+  font: normal normal bold 14px/19px Roboto;
+  letter-spacing: 0px;
+  color: #ffffff;
+  opacity: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.user-count {
+  width: 27px;
+  height: 20px;
+  /* UI Properties */
+  text-align: left;
+  font: normal normal normal 15px/20px Roboto;
+  letter-spacing: 0px;
+  color: #878787;
+  opacity: 1;
+  margin-left: 8px;
+}
+
+.price-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+.discounted-price {
+  width: 111px;
+  height: 39px;
+  /* UI Properties */
+  font-family: Roboto;
+  font-size: 28px;
+  color: #0a0102;
+  opacity: 1;
+  font-weight: bolder;
+}
+
+.price {
+  width: 55px;
+  height: 20px;
+  /* UI Properties */
+  text-align: left;
+  text-decoration: line-through;
+  font: normal normal normal 15px/20px Roboto;
+  letter-spacing: 0px;
+  color: #878787;
+  opacity: 1;
+}
+
+//book description
+
+.book-desc {
+  margin: 25px 0 25px 16px;
+}
+.book-desc > ul > li {
+  text-align: left;
+  font: normal normal normal 15px/20px Roboto;
+  letter-spacing: 0px;
+  color: #878787;
+  opacity: 1;
+}
+.book-desc-para {
+  text-align: left;
+  font: normal normal normal 12px/16px Roboto;
+  letter-spacing: 0px;
+  color: #373434;
+  font-weight: bold;
+  opacity: 1;
+}
+//feedback
+
+.feedback-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.submit-btn-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 16px;
+}
+
+.feedback-container {
+  background-color: #f5f5f5;
+  border-radius: 2px;
+  padding: 8px 24px;
+}
+
+.feedback-submit {
+  width: 76px;
+  height: 24px;
+  /* UI Properties */
+  background: #3371b5 0% 0% no-repeat padding-box;
+  border-radius: 2px;
+  opacity: 1;
+  color: white;
+  outline: none;
+  border: none;
+  transform: 0.3s ease-in;
+  margin: 8px 0;
+}
+
+.feedback-submit:hover {
+  background-color: #2967a9;
+  cursor: pointer;
+}
+.cc-fb-title {
+  text-align: left;
+  font: normal normal normal 18px/24px Roboto;
+  letter-spacing: 0px;
+  color: #0a0102;
+  opacity: 1;
+  margin: 1em 0;
+  font-weight: bolder;
+}
+
+.ov-all-r {
+  text-align: left;
+  font: normal normal normal 12px/16px Roboto;
+  letter-spacing: 0px;
+  color: #0a0102;
+  opacity: 1;
+  margin: 8px 0;
+  font-weight: bold;
+}
+
+.feedback-star {
+  width: 20px;
+  height: 19px;
+}
+textarea {
+  outline: none;
+  border: none;
+  resize: horizontal;
+  margin-top: 0.7em;
+}
+textarea::placeholder {
+  font-family: Roboto;
+  padding: 8px;
+}
+//comment
+
+.fb-comment-container {
+  // border: 1px solid greenyellow;
+  margin-top: 1em;
+}
+
+.group-comment-data {
+  display: flex;
+}
+
+.fb-profile {
+  width: 48px;
+  height: 30px;
+  background: #f5f5f5 0% 0% no-repeat padding-box;
+  border: 1px solid #e4e4e4;
+  opacity: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font: normal normal normal 11px/15px Roboto;
+  color: #707070;
+  opacity: 0.9;
+  border-radius: 30px;
+}
+.cc-name {
+  text-align: left;
+  font: normal normal normal 15px/20px Roboto;
+  letter-spacing: 0px;
+  color: #0a0102;
+  opacity: 1;
+}
+.fb-cc-dt {
+  margin: 4px 10px;
+}
+.cc-starr-fb {
+  margin: 8px 0;
+}
+.cc-fb-cmment {
+  text-align: left;
+  font: normal normal normal 12px/16px Roboto;
+  letter-spacing: 0px;
+  color: #707070;
+  opacity: 1;
+  margin: 10px 0;
+}
+
+.books-Qty {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.Qty-btn {
+  width: 38px;
+  height: 38px;
+  color: #373434;
+  border-radius: 50%;
+  background: #FAFAFA 0% 0% no-repeat padding-box;
+  border: 1px solid #DBDBDB;
+  opacity: 1;
+}
+
+.book-qty-count {
+  width: 66px;
+  height: 38px;
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  border: 1px solid #DBDBDB;
+  border-radius: 2px;
+  opacity: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.left-left-container{
+  display: flex;
+  // border: 2px solid red;
+  margin:  0em 0  2em 0;
+}

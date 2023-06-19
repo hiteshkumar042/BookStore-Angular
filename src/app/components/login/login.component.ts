@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router,RouterLink } from '@angular/router';
 import { UserService } from 'src/app/services/userservices/user.service';
 
 @Component({
@@ -24,7 +25,12 @@ export class LoginComponent {
   SignupFormData!: FormGroup;
 
 
-  constructor(private formBuilder: FormBuilder, private userService: UserService,private snackBar:MatSnackBar) { }
+  constructor(
+    private formBuilder: FormBuilder,
+     private userService: UserService,
+     private snackBar:MatSnackBar,
+     private router:Router
+    ) { }
 
   ngOnInit() {
     this.LoginFormData = this.formBuilder.group({
@@ -50,6 +56,8 @@ export class LoginComponent {
         this.snackBar.open('Account created succesfully', 'Ok', {
           duration: 3000
         });
+        //Navigate to dashboard page
+        this.router.navigateByUrl('/dashboard')
       })
     }
     else {
