@@ -12,9 +12,15 @@ export class DisplaybookComponent implements OnInit {
   constructor(private bookService:BookService,private dataService:DataService,private router:Router){}
   booksCount:number=0
   ngOnInit(): void {
-   this.getAllBooks()
+  this.Searchbook()
   }
-  // bookObj: any[]=[];
+  Searchbookdetails:any
+  Searchbook(){
+    this.dataService.currentbookSearch.subscribe(query=>{
+      this.Searchbookdetails=query;
+    })
+  }
+
   hoveredIndex=""
   @Input() BookObj:any
   
@@ -23,9 +29,15 @@ export class DisplaybookComponent implements OnInit {
     this.dataService.setData(book);
     this.router.navigateByUrl('dashboard/bookdetails')
   }
-  getAllBooks(){
-    this.bookService.getAllBooksService().subscribe((books:any) =>{
-     this.booksCount=books.result.length;
-    })
-  }
+  
+  
+  
+  
+  
+  // getAllBooks(){
+  //   this.bookService.getAllBooksService().subscribe((books:any) =>{
+  //    this.booksCount=books.result.length;
+  //    console.log(books)
+  //   })
+  // }
 }

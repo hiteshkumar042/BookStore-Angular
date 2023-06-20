@@ -18,6 +18,10 @@ import { DisplaybookComponent } from './components/displaybook/displaybook.compo
 import { BookdetailsComponent } from './components/bookdetails/bookdetails.component';
 import { AllbooksComponent } from './components/allbooks/allbooks.component';
 import { MycartComponent } from './components/mycart/mycart.component';
+import {MatBadgeModule} from '@angular/material/badge';
+import {MatRadioModule} from '@angular/material/radio';
+import { OrderconfirmComponent } from './components/orderconfirm/orderconfirm.component';
+import { SearchingPipe } from './pipes/searching.pipe';
 
 @NgModule({
   declarations: [
@@ -28,13 +32,14 @@ import { MycartComponent } from './components/mycart/mycart.component';
     BookdetailsComponent,
     AllbooksComponent,
     MycartComponent,
+    OrderconfirmComponent,
+    SearchingPipe,
   ],
   imports: [
     BrowserModule,BrowserAnimationsModule, AppRoutingModule,
     FormsModule,ReactiveFormsModule,HttpClientModule,
     MatButtonModule,MatTabsModule,MatCardModule,MatFormFieldModule,MatInputModule,MatIconModule,MatSnackBarModule,
-
-    
+    MatBadgeModule,MatRadioModule
   ],
   providers: [],
   bootstrap: [AppComponent]

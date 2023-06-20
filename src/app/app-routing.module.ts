@@ -5,6 +5,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { BookdetailsComponent } from './components/bookdetails/bookdetails.component';
 import { AllbooksComponent } from './components/allbooks/allbooks.component';
 import { MycartComponent } from './components/mycart/mycart.component';
+import { OrderconfirmComponent } from './components/orderconfirm/orderconfirm.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -15,7 +16,8 @@ const routes: Routes = [
       { path: "", redirectTo: "allbooks", pathMatch: "full" },
       { path: "allbooks", component: AllbooksComponent },
       { path: "bookdetails", component: BookdetailsComponent },
-      { path: "mycart", component: MycartComponent }
+      { path: "mycart", component: MycartComponent },
+      { path: "order-confirmation", component: OrderconfirmComponent}
     ]
   },
 

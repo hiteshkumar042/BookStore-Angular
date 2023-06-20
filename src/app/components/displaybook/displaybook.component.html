@@ -7,7 +7,7 @@
     </div>
 
     <div class="all-books-container">
-        <div *ngFor="let book of BookObj">
+        <div *ngFor="let book of BookObj | searching:Searchbookdetails">
             <mat-card class="book-card-container" [ngClass]="{ 'hovered': hoveredIndex === book._id }"
                 (mouseenter)="hoveredIndex = book._id" (mouseleave)="hoveredIndex=''" (click)="bookToDataService(book)">
                 <div class="book-image-container">
@@ -30,3 +30,4 @@
         </div>
     </div>
 </div>
+<!-- paginator -->

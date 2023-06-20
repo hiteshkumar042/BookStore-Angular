@@ -14,6 +14,19 @@ export class DataService {
     this.DataSource.next(data)
   }
   
+  private cartQtySource = new BehaviorSubject(0)
+  cartQtycurrentData = this.cartQtySource.asObservable()
+
+  setCartQtyData(data:any){
+    this.cartQtySource.next(data)
+  }
+
+  private bookSearchSource = new BehaviorSubject("")
+  currentbookSearch = this.bookSearchSource.asObservable()
+
+  setSearchBook(data:any){
+    this.bookSearchSource.next(data)
+  }
 
 
 }

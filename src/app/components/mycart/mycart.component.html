@@ -10,7 +10,7 @@
 
     <mat-card *ngIf="showMycart" class="my-cart-mat-container">
         <div class="my-cart-select-container">
-            <div class="Mycart001">My cart (1)</div>
+            <div class="Mycart001">My cart ({{totalQtyToBuy}})</div>
             <select class="Select-container">
                 <option value="">BridgeLabz Solutions LLP, No...</option>
             </select>
@@ -52,7 +52,7 @@
                     <div class="cc-details-tt">Customer Details</div>
                     <div class="add-new-add">Add New Address</div>
                 </div>
-                <form action="">
+                <form [formGroup]="AddressDataForm">
                 <div class="form-data-container">
                     
                     <div class="name-mobile">
@@ -60,16 +60,16 @@
                         <div class="f-name-container">
                             <mat-form-field appearance="outline" [style.width]="'251px'">
                                 <mat-label>Full Name</mat-label>
-                                <input matInput placeholder="Full Name">
-                                <mat-error>Hint</mat-error>
+                                <input matInput placeholder="Full Name" formControlName="fullName">
+                                <mat-error>{{nameError}}</mat-error>
                             </mat-form-field>
                         </div>
                         <!-- Mobile -->
                         <div class="mobile-container">
                             <mat-form-field appearance="outline" [style.width]="'251px'">
                                 <mat-label>Mobile Number</mat-label>
-                                <input matInput placeholder="Mobile Number">
-                                <mat-error>Hint</mat-error>
+                                <input matInput placeholder="Mobile Number"formControlName="mobileNumber">
+                                <mat-error>{{mobileError}}</mat-error>
                             </mat-form-field>
                         </div>
                     </div>
@@ -77,8 +77,8 @@
                     <div class="address-container">
                         <mat-form-field appearance="outline" class="text-area-width">
                             <mat-label>Address</mat-label>
-                            <textarea matInput></textarea>
-                            <mat-error>Hint</mat-error>
+                            <textarea matInput formControlName="fullAddress"></textarea>
+                            <mat-error>{{AddressError}}</mat-error>
                         </mat-form-field>
                     </div>
                     <!-- City and State -->
@@ -87,23 +87,29 @@
                         <div class="f-name-container">
                             <mat-form-field appearance="outline" [style.width]="'251px'">
                                 <mat-label>City</mat-label>
-                                <input matInput placeholder="City">
-                                <mat-error>Hint</mat-error>
+                                <input matInput placeholder="City" formControlName="city">
+                                <mat-error>{{cityError}}</mat-error>
                             </mat-form-field>
                         </div>
                         <!-- State -->
                         <div class="mobile-container">
                             <mat-form-field appearance="outline" [style.width]="'251px'">
                                 <mat-label>State</mat-label>
-                                <input matInput placeholder="State" >
-                                <mat-error>Hint</mat-error>
+                                <input matInput placeholder="State" formControlName="state" >
+                                <mat-error>{{stateError}}</mat-error>
                             </mat-form-field>
                         </div>
                     </div>
+                    <!-- Address type -->
+                    <mat-radio-group aria-label="Select an option" formControlName="addressType">
+                        <mat-radio-button class="radio" value="Home">Home</mat-radio-button>
+                        <mat-radio-button class="radio" value="Office">Work</mat-radio-button>
+                        <mat-radio-button class="radio" value="Other">Other</mat-radio-button>
+                      </mat-radio-group>
                    
                 </div>
                 <div *ngIf="continueBtn" class="contd-btn-container">
-                    <button (click)="continueClick()" class="contd-btn">Continue</button>
+                    <button type="submit" (click)="continueClick()" class="contd-btn">Continue</button>
                 </div>
             </form>
             </div>
@@ -135,8 +141,16 @@
                 </div>
             </div>
         </div>
+        <!-- Total Amount -->
+        <hr>
+        <div class="total-amount-container">
+            <div class="total-amount-title">Total Amount</div>
+            <div class="total-amount">Rs. {{totalAmount}}</div>
+        </div>
+        <hr>
+        <!-- Checkout btn -->
         <div class="place-order-container">
-            <button class="plc-order-btn" (click)="placeOrder()">CHECKOUT</button>
+            <button class="plc-order-btn" (click)="checkout()">CHECKOUT</button>
         </div>
     </mat-card>
 

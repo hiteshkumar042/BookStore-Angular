@@ -1,0 +1,53 @@
+.order-confirmation-container {
+  width: 70vw;
+  margin: auto;
+  height: 84.1vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.order-photo > img {
+  width: 330px;
+  height: 230px;
+}
+.order-num {
+  text-align: center;
+}
+
+.table-container {
+  width: 70vh;
+}
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td,
+th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+  font-family: Roboto;
+  font-size: small;
+}
+
+tr:nth-child(odd) {
+  background-color: #dddddd;
+}
+
+.contd-btn {
+  width: 200px;
+  height: 35px;
+  background: #3371b5 0% 0% no-repeat padding-box;
+  border-radius: 3px;
+  opacity: 1;
+  outline: none;
+  border: none;
+  color: white;
+}
+
+.contd-btn:hover{
+cursor: pointer;
+}
