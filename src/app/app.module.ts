@@ -17,6 +17,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { DisplaybookComponent } from './components/displaybook/displaybook.component';
 import { BookdetailsComponent } from './components/bookdetails/bookdetails.component';
 import { AllbooksComponent } from './components/allbooks/allbooks.component';
+import { MycartComponent } from './components/mycart/mycart.component';
 
 @NgModule({
   declarations: [
@@ -26,11 +27,14 @@ import { AllbooksComponent } from './components/allbooks/allbooks.component';
     DisplaybookComponent,
     BookdetailsComponent,
     AllbooksComponent,
+    MycartComponent,
   ],
   imports: [
     BrowserModule,BrowserAnimationsModule, AppRoutingModule,
     FormsModule,ReactiveFormsModule,HttpClientModule,
     MatButtonModule,MatTabsModule,MatCardModule,MatFormFieldModule,MatInputModule,MatIconModule,MatSnackBarModule,
+
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

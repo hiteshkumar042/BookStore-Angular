@@ -20,6 +20,10 @@
   align-items: center;
   flex-wrap: nowrap;
 }
+
+.logo-title:hover {
+  cursor: pointer;
+}
 .bookstore-title {
   margin-left: 8px;
   text-align: left;
@@ -74,6 +78,11 @@
   align-items: center;
   padding: 0 1.3em;
 }
+.profile-container:hover,
+.cart-container:hover{
+  cursor: pointer;
+}
+
 
 .action-icon-border {
   color: white;

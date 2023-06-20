@@ -21,4 +21,7 @@ export class HttpService {
     return this.httpClient.put(this.BaseUrl + url, reqPayload, httpAuthOptions);
   }
 
+  deleteService(url: string,httpAuthOptions: any){
+    return this.httpClient.delete(this.BaseUrl + url,httpAuthOptions);
+  }
 }

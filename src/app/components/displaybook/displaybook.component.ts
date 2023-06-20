@@ -8,14 +8,24 @@ import { DataService } from 'src/app/services/dataservices/data.service';
   templateUrl: './displaybook.component.html',
   styleUrls: ['./displaybook.component.scss']
 })
-export class DisplaybookComponent {
+export class DisplaybookComponent implements OnInit {
   constructor(private bookService:BookService,private dataService:DataService,private router:Router){}
+  booksCount:number=0
+  ngOnInit(): void {
+   this.getAllBooks()
+  }
   // bookObj: any[]=[];
   hoveredIndex=""
   @Input() BookObj:any
+  
  
   bookToDataService(book:any){
     this.dataService.setData(book);
     this.router.navigateByUrl('dashboard/bookdetails')
+  }
+  getAllBooks(){
+    this.bookService.getAllBooksService().subscribe((books:any) =>{
+     this.booksCount=books.result.length;
+    })
   }
 }

@@ -7,8 +7,6 @@ import { BehaviorSubject, Subject } from 'rxjs';
 export class DataService {
 
   constructor() { }
-  singleBookDetails: any; 
-
   private DataSource = new BehaviorSubject([])
   currentData = this.DataSource.asObservable()
 
@@ -16,12 +14,6 @@ export class DataService {
     this.DataSource.next(data)
   }
   
-  private cartinfoNum = new BehaviorSubject([]);
-  cartMessage = this.cartinfoNum.asObservable();
-
-  sendCartNo(message: any) {
-    this.cartinfoNum.next(message)
-  }
 
 
 }

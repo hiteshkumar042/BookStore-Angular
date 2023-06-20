@@ -8,7 +8,7 @@ import { BookService } from 'src/app/services/bookservices/book.service';
 })
 export class AllbooksComponent {
   constructor( private bookService:BookService){}
-  allBooksArray: any[] = []
+  allBooksArray: any[] = [];
   ngOnInit() {
     this.getallBooks()
   }

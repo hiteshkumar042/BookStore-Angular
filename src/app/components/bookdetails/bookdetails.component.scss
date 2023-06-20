@@ -356,6 +356,11 @@ textarea::placeholder {
   background: #FAFAFA 0% 0% no-repeat padding-box;
   border: 1px solid #DBDBDB;
   opacity: 1;
+  transition: background-color 0.2s ease-in-out;
+}
+.Qty-btn:hover{
+    cursor: pointer;
+    background-color: #9d9d9d;
 }
 
 .book-qty-count {

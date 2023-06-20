@@ -48,4 +48,16 @@ export class CartService {
     }
     return this.httpService.updateService('/cart_item_quantity/'+Id , reqBody, httpHeadersOption)
   }
+
+  deleteFromCart(Id:any){
+    this.token = localStorage.getItem('token');
+
+    let httpHeadersOption = {
+      headers: new HttpHeaders({
+        contentType: 'application/json',
+        'x-access-token': this.token
+      })
+    }
+   return this.httpService.deleteService('/remove_cart_item/'+Id,httpHeadersOption)
+  }
 }

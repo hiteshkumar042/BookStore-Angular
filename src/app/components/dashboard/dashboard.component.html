@@ -1,7 +1,7 @@
 <div class="header-container">
     <div class="header-inner">
         <div class="title-search-container">
-            <div class="logo-title">
+            <div (click)="homePage()" class="logo-title">
                 <img src="../../../assets/educationheaderlogo.svg" alt="">
                 <h4 class="bookstore-title">Book Store</h4>
             </div>
@@ -15,7 +15,7 @@
                 <mat-icon class="action-icon-border">perm_identity</mat-icon>
                 <h6 class="action-icon-text" >Profile</h6>
             </div>
-            <div class="cart-container">
+            <div (click)="myCartPage()" class="cart-container">
                 <mat-icon class="action-icon-border">shopping_cart</mat-icon>
                 <h6 class="action-icon-text">Cart</h6>
             </div>
