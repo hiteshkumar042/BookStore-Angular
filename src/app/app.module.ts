@@ -23,6 +23,8 @@ import {MatRadioModule} from '@angular/material/radio';
 import { OrderconfirmComponent } from './components/orderconfirm/orderconfirm.component';
 import { SearchingPipe } from './pipes/searching.pipe';
 import { SortingPipe } from './pipes/sortingpipe/sorting.pipe';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import { WishlistComponent } from './components/wishlist/wishlist.component';
 
 @NgModule({
   declarations: [
@@ -36,12 +38,13 @@ import { SortingPipe } from './pipes/sortingpipe/sorting.pipe';
     OrderconfirmComponent,
     SearchingPipe,
     SortingPipe,
+    WishlistComponent,
   ],
   imports: [
     BrowserModule,BrowserAnimationsModule, AppRoutingModule,
     FormsModule,ReactiveFormsModule,HttpClientModule,
     MatButtonModule,MatTabsModule,MatCardModule,MatFormFieldModule,MatInputModule,MatIconModule,MatSnackBarModule,
-    MatBadgeModule,MatRadioModule
+    MatBadgeModule,MatRadioModule,MatPaginatorModule
   ],
   providers: [],
   bootstrap: [AppComponent]

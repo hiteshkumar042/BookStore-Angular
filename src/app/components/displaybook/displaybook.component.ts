@@ -10,9 +10,12 @@ import { DataService } from 'src/app/services/dataservices/data.service';
 })
 export class DisplaybookComponent implements OnInit {
   constructor(private bookService:BookService,private dataService:DataService,private router:Router){}
-  booksCount:number=0
+  booksCount:number=0;
+  lowValue:number=0;
+  highValue:number=8;
   ngOnInit(): void {
-  this.Searchbook()
+  this.Searchbook();
+  this.getAllBooks();
   }
   //Searching Book
   Searchbookdetails:any
@@ -40,10 +43,18 @@ export class DisplaybookComponent implements OnInit {
   
   
   
-  // getAllBooks(){
-  //   this.bookService.getAllBooksService().subscribe((books:any) =>{
-  //    this.booksCount=books.result.length;
-  //    console.log(books)
-  //   })
-  // }
+  getAllBooks(){
+    this.bookService.getAllBooksService().subscribe((books:any) =>{
+     this.booksCount=books.result.length;
+     console.log(books)
+    })
+  }
+
+  paginationData(event:any){
+    console.log(event)
+     this.lowValue = event.pageIndex * event.pageSize;
+     this.highValue = this.lowValue + event.pageSize;
+
+    return event;
+  }
 }

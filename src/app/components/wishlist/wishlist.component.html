@@ -1,0 +1,31 @@
+<div class="wishlist-container">
+    <div class="wishlist-first-row">
+        <div class="home">Home / </div>
+        <div class="mywishlist">My Whishlist</div>
+    </div>
+    <div class="items-container">
+        <div class="mywishlist-heading">My Wishlist ({{totalWishList}})</div>
+        <div *ngFor="let item of wishlistCart" class="border-check">
+            <div class="single-wishlist">
+                <div class="left">
+                    <div class="bookimage">
+                       <img src="../../../assets/book image/Image 11.png" alt="">
+                    </div>
+                    <div class="book-details">
+                        <div class="bookName">{{item.product_id.bookName}}</div>
+                        <div class="author">{{item.product_id.bookName}}</div>
+                        <div class="price-container">
+                            <div class="discountprice">Rs. {{item.product_id.discountPrice}}</div>
+                            <div class="price">Rs.{{item.product_id.price}}</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="right-delete">
+                    <mat-icon (click)="removeFromWishlist(item.product_id._id)" >delete_outline</mat-icon>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    
+</div>

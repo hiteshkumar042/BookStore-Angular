@@ -61,6 +61,7 @@ export class BookdetailsComponent implements OnInit {
     }
     this.cartService.updateCart(this.cartItemId, reqBody).subscribe((result: any) => {
       console.log(result)
+     
     })
   }
 
@@ -71,6 +72,7 @@ export class BookdetailsComponent implements OnInit {
     }
     this.cartService.updateCart(this.cartItemId, reqBody).subscribe((result: any) => {
       console.log(result)
+      
     })
   }
 

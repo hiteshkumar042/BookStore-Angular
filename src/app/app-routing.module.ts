@@ -6,6 +6,7 @@ import { BookdetailsComponent } from './components/bookdetails/bookdetails.compo
 import { AllbooksComponent } from './components/allbooks/allbooks.component';
 import { MycartComponent } from './components/mycart/mycart.component';
 import { OrderconfirmComponent } from './components/orderconfirm/orderconfirm.component';
+import { WishlistComponent } from './components/wishlist/wishlist.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -17,7 +18,9 @@ const routes: Routes = [
       { path: "allbooks", component: AllbooksComponent },
       { path: "bookdetails", component: BookdetailsComponent },
       { path: "mycart", component: MycartComponent },
-      { path: "order-confirmation", component: OrderconfirmComponent}
+      { path: "wishlist", component: WishlistComponent},
+      { path: "order-confirmation", component: OrderconfirmComponent},
+            
     ]
   },
 

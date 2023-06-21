@@ -335,3 +335,31 @@ margin-left: 0.5em;
   opacity: 1;
   font-weight: 600;
 }
+
+
+.checkout-container {
+  display: flex;
+  justify-content: flex-end;
+  margin: 1.5em 0 5em;
+}
+.checkout-btn {
+  width: 152px;
+  height: 35px;
+  background: #3371b5 0% 0% no-repeat padding-box;
+  border-radius: 2px;
+  opacity: 1;
+  outline: none;
+  border: none;
+  color: white;
+  transition: background-color 0.2s ease-in-out;
+}
+.checkout-btn:hover {
+  cursor: pointer;
+  background-color: #1e5fa4;
+}
+.summ-mat-container {
+  height: 60px;
+  padding: 21px 36px;
+  box-shadow: 0 0 2px;
+  margin-bottom: 12em;
+}

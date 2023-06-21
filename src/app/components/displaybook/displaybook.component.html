@@ -2,7 +2,7 @@
     <div class="bookcount-sort-container">
         <h2 class="books-heading">Books <span class="books-count">({{booksCount}} Items)</span></h2>
         <select (change)="getSelectedValue($event)">
-            <option value="default">Sort by relevance</option>
+            <option value="">Sort by relevance</option>
             <option value="atoz">BookName : A - Z</option>
             <option value="ztoa">BookName : Z - A</option>
             <option value="lowtohigh">Price : Low to High</option>
@@ -11,23 +11,23 @@
     </div>
 
     <div class="all-books-container">
-        <div *ngFor="let book of BookObj | searching:Searchbookdetails | sorting:selectedSortingOption">
-            <mat-card class="book-card-container" [ngClass]="{ 'hovered': hoveredIndex === book._id }"
-                (mouseenter)="hoveredIndex = book._id" (mouseleave)="hoveredIndex=''" (click)="bookToDataService(book)">
+        <div *ngFor="let book of BookObj |sorting:selectedSortingOption |searching:Searchbookdetails |slice :lowValue:highValue ">
+            <mat-card class="book-card-container" [ngClass]="{ 'hovered': hoveredIndex === book?._id }"
+                (mouseenter)="hoveredIndex = book?._id" (mouseleave)="hoveredIndex=''" (click)="bookToDataService(book)">
                 <div class="book-image-container">
                     <div><img src="../../../assets/book image/Image 11.png" alt=""></div>
                 </div>
                 <div class="book-details-container">
-                    <div id="book-heading">{{book.bookName}}</div>
+                    <div id="book-heading">{{book?.bookName}}</div>
                     <!-- <div id="book-author">by Steve Krug</div> -->
-                    <div id="book-author">{{book.author}}</div>
+                    <div id="book-author">{{book?.author}}</div>
                     <div id="rating-container">
                         <div id="book-rating">4.5 *</div>
                         <div id="book-review-count">(20)</div>
                     </div>
                     <div id="price-container">
-                        <div id="discounted-price">Rs. {{book.discountPrice}}</div>
-                        <div id="actual-price">Rs. {{book.price}}</div>
+                        <div id="discounted-price">Rs. {{book?.discountPrice}}</div>
+                        <div id="actual-price">Rs. {{book?.price}}</div>
                     </div>
                 </div>
             </mat-card>
@@ -35,3 +35,11 @@
     </div>
 </div>
 <!-- paginator -->
+
+<div class="page"
+    style="position: relative; bottom: 30px; width: 70vw; padding-bottom: 4em; display: flex; align-items: center;justify-content: center; margin: auto;">
+    <mat-paginator [length]="BookObj.length" pageSize=8 [pageSizeOptions]="[4, 6, 8,10,12]" (page)="paginationData($event)">
+    </mat-paginator>
+</div>
+<!-- 
+ -->

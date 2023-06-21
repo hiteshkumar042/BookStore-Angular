@@ -6,7 +6,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class SortingPipe implements PipeTransform {
 
   transform(value: any, args: any) {
-    if (!args) {
+    if (args=="") {
       return value
     }
     ///price wise  - low to high
@@ -44,6 +44,9 @@ export class SortingPipe implements PipeTransform {
         }
         return 0
       })
+    }
+    else{
+      return value
     }
 
   }
