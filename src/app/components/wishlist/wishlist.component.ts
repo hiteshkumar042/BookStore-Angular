@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { WishlistService } from 'src/app/services/wishlistservices/wishlist.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { WishlistService } from 'src/app/services/wishlistservices/wishlist.serv
 export class WishlistComponent implements OnInit {
 
 
-  constructor( private wishlistService :WishlistService) { }
+  constructor( private wishlistService :WishlistService, private router:Router) { }
   ngOnInit(): void {
     this.getWishListItems()
   }
@@ -38,5 +39,7 @@ export class WishlistComponent implements OnInit {
       this.getWishListItems()
     })
   }
-
+  home(){
+    this.router.navigateByUrl("/dashboard/allbooks")
+  }
 }

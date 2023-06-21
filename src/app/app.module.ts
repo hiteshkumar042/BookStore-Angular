@@ -25,6 +25,8 @@ import { SearchingPipe } from './pipes/searching.pipe';
 import { SortingPipe } from './pipes/sortingpipe/sorting.pipe';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { WishlistComponent } from './components/wishlist/wishlist.component';
+import {MatMenuModule} from '@angular/material/menu';
+
 
 @NgModule({
   declarations: [
@@ -44,7 +46,7 @@ import { WishlistComponent } from './components/wishlist/wishlist.component';
     BrowserModule,BrowserAnimationsModule, AppRoutingModule,
     FormsModule,ReactiveFormsModule,HttpClientModule,
     MatButtonModule,MatTabsModule,MatCardModule,MatFormFieldModule,MatInputModule,MatIconModule,MatSnackBarModule,
-    MatBadgeModule,MatRadioModule,MatPaginatorModule
+    MatBadgeModule,MatRadioModule,MatPaginatorModule,MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]

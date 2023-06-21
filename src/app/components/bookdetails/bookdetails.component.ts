@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { DataService } from 'src/app/services/dataservices/data.service';
 import { CartService } from '../../services/cartservices/cart.service'
 import { WishlistService } from 'src/app/services/wishlistservices/wishlist.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 
 @Component({
@@ -15,7 +16,7 @@ export class BookdetailsComponent implements OnInit {
   qtyToBuy: any = 1;
   currentCartArray: any[] = [];
   CArray = [1, 2]
-  constructor(private dataService: DataService, private router: Router,
+  constructor(private dataService: DataService, private router: Router,private snackbar:MatSnackBar,
     private cartService: CartService, private wishlistService: WishlistService) { }
   bookInfo: any
   bookId: any
@@ -78,7 +79,7 @@ export class BookdetailsComponent implements OnInit {
 
   AddToWhishlist() {
     this.wishlistService.AddWishListService(this.bookId).subscribe((result: any) => {
-      console.log(result);
+      this.snackbar.open("Added to Wishlist","Ok",{duration: 3000});
     })
   }
 

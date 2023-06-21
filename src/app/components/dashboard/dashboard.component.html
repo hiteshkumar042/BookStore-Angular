@@ -11,10 +11,31 @@
             </div>
         </div>
         <div class="right-action-container">
-            <div class="profile-container">
-                <mat-icon class="action-icon-border">perm_identity</mat-icon>
-                <h6 class="action-icon-text" >Profile</h6>
-            </div>
+                <!-- profile icon -->
+                <div mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu" class="profile-container">
+                    <mat-icon class="action-icon-border">perm_identity</mat-icon>
+                    <h6 class="action-icon-text" >{{username}}</h6>
+                </div>
+              <!-- options -->
+              <mat-menu #menu="matMenu">
+                <div class="hello-user">Hello {{username}},</div>
+                <button mat-menu-item>
+                    <mat-icon>perm_identity</mat-icon>
+                  <span>Profile</span>
+                </button>
+                <button mat-menu-item >
+                	<mat-icon>card_giftcard</mat-icon>
+                  <span>My Orders</span>
+                </button>
+                <button mat-menu-item (click)="redirectToWishList()">
+                    <mat-icon>favorite_border</mat-icon>
+                  <span>Wishlist</span>
+                </button>
+                <button class="logout-btn" (click)="logout()">Logout</button>
+              </mat-menu>
+              
+              
+            
             <div (click)="myCartPage()" class="cart-container">
                 <mat-icon  *ngIf="!showCart" class="action-icon-border">shopping_cart</mat-icon>
                 <mat-icon *ngIf="showCart" [matBadge]="TotalCartItem" matBadgeColor="warn" class="action-icon-border">shopping_cart</mat-icon>

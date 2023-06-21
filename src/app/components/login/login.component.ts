@@ -53,7 +53,7 @@ export class LoginComponent {
         //to store the token in local storage
         localStorage.setItem('token', data.result.accessToken);
         //snackbar when account is logged in
-        this.snackBar.open('Account created succesfully', 'Ok', {
+        this.snackBar.open('Logged in succesfully', 'Ok', {
           duration: 3000
         });
         //Navigate to dashboard page

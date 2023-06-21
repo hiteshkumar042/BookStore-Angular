@@ -17,14 +17,15 @@ export class DashboardComponent implements OnInit {
 
   TotalCartItem: number = 0
   showCart = true;
+  username=""
 
   getcartItem(){
     this.cartService.getCartBooks().subscribe((book:any) =>{
-      console.log(book.result)
+      this.username=book.result[0].user_id.fullName
       for(let i=0; i<book.result.length; i++){
         this.TotalCartItem += book.result[i].quantityToBuy
       }
-      console.log(this.TotalCartItem)
+      // console.log(this.TotalCartItem)
     })
   }
 
@@ -41,6 +42,14 @@ export class DashboardComponent implements OnInit {
   }
   homePage() {
     this.router.navigateByUrl("/dashboard/allbooks")
+  }
+  redirectToWishList(){
+    this.router.navigateByUrl("/dashboard/wishlist")
+  }
+
+  logout(){
+    localStorage.removeItem("token")
+    this.router.navigateByUrl("/login")
   }
 
 }

@@ -141,3 +141,38 @@
   color: white;
   bottom: 0;
 }
+
+//logout and wishlist
+.logout-btn{
+  width: 123px;
+height: 33px;
+/* UI Properties */
+border: 1px solid #A03037;
+border-radius: 2px;
+opacity: 1;
+color: A03037;
+display: flex;
+background-color: white;
+justify-content: center;
+align-items: center;
+text-align: left;
+font: normal normal normal 12px/16px Roboto;
+letter-spacing: 0px;
+color: #A03037;
+opacity: 1;
+margin: 0.8em 1.1em;
+}
+
+.logout-btn:hover{
+  cursor: pointer;
+}
+
+.hello-user{
+  margin: 1em 1.5em;
+  text-align: left;
+font: normal normal medium 12px/16px Roboto;
+letter-spacing: 0px;
+color: #0A0102;
+opacity: 1;
+width: 170px;
+}
