@@ -136,7 +136,7 @@
                     <div class="cart-book-author">{{item.product_id.author}}</div>
                     <div class="price-cart-container">
                         <div class="discountedprice">Rs. {{item.product_id.discountPrice}}</div>
-                        <div class="price">Rs.{{item.product_id.price}}</div>
+                        <div class="price">Rs.{{item.product_id.price}}</div> &nbsp; * <span class="order-sunn-qty">{{item.quantityToBuy}} QTY</span>
                     </div>
                 </div>
             </div>
@@ -147,6 +147,7 @@
             <div class="total-amount-title">Total Amount</div>
             <div class="total-amount">Rs. {{totalAmount}}</div>
         </div>
+        
         <hr>
         <!-- Checkout btn -->
         <div class="place-order-container">

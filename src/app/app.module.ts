@@ -22,6 +22,7 @@ import {MatBadgeModule} from '@angular/material/badge';
 import {MatRadioModule} from '@angular/material/radio';
 import { OrderconfirmComponent } from './components/orderconfirm/orderconfirm.component';
 import { SearchingPipe } from './pipes/searching.pipe';
+import { SortingPipe } from './pipes/sortingpipe/sorting.pipe';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { SearchingPipe } from './pipes/searching.pipe';
     MycartComponent,
     OrderconfirmComponent,
     SearchingPipe,
+    SortingPipe,
   ],
   imports: [
     BrowserModule,BrowserAnimationsModule, AppRoutingModule,

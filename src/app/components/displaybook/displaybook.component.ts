@@ -14,11 +14,17 @@ export class DisplaybookComponent implements OnInit {
   ngOnInit(): void {
   this.Searchbook()
   }
+  //Searching Book
   Searchbookdetails:any
   Searchbook(){
     this.dataService.currentbookSearch.subscribe(query=>{
       this.Searchbookdetails=query;
     })
+  }
+  //SortingBook
+  selectedSortingOption:any
+  getSelectedValue(event:any){
+    this.selectedSortingOption=event.target.value
   }
 
   hoveredIndex=""
