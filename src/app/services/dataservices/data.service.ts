@@ -28,5 +28,8 @@ export class DataService {
     this.bookSearchSource.next(data)
   }
 
+  getToken(){
+    return localStorage.getItem("token")
+  }
 
 }

@@ -7,12 +7,13 @@ import { AllbooksComponent } from './components/allbooks/allbooks.component';
 import { MycartComponent } from './components/mycart/mycart.component';
 import { OrderconfirmComponent } from './components/orderconfirm/orderconfirm.component';
 import { WishlistComponent } from './components/wishlist/wishlist.component';
+import { authGuard } from './auth/auth.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   {
-    path: 'dashboard', component: DashboardComponent,
+    path: 'dashboard', component: DashboardComponent,canActivate:[authGuard],
     children: [
       { path: "", redirectTo: "allbooks", pathMatch: "full" },
       { path: "allbooks", component: AllbooksComponent },
