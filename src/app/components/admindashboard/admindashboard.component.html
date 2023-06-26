@@ -1,0 +1,50 @@
+<div class="header-container">
+    <div class="header-inner">
+        <div class="title-search-container">
+            <div class="logo-title">
+                <img src="../../../assets/educationheaderlogo.svg" alt="">
+                <div class="bookstore-title">Book Store</div>
+            </div>
+            <div class="search-container">
+                <mat-icon style="transform: scale(0.77); color: #9D9D9D;margin-left: 3px;">search</mat-icon>
+                <input type="text" placeholder="Search...">
+            </div>
+        </div>
+        <div class="right-action-container">
+                <!-- profile icon -->
+                <div mat-icon-button [matMenuTriggerFor]="menu" matTooltip="My Account" class="profile-container">
+                    <mat-icon class="action-icon-border">perm_identity</mat-icon>
+                    <h6 class="action-icon-text" >Nityanand</h6>
+                </div>
+              <!-- options -->
+              <mat-menu #menu="matMenu">
+                <div class="hello-user">Hello Nityanand,</div>
+                <button mat-menu-item>
+                    <mat-icon>perm_identity</mat-icon>
+                  <span>Profile</span>
+                </button>
+                <!-- <button mat-menu-item >
+                	<mat-icon>card_giftcard</mat-icon>
+                  <span>My Orders</span>
+                </button>
+                <button mat-menu-item >
+                    <mat-icon>favorite_border</mat-icon>
+                  <span>Wishlist</span>
+                </button> -->
+                <button (click)="logoutAdmin()" class="logout-btn" >Logout</button>
+              </mat-menu>
+              
+              
+            
+            <!-- <div  matTooltip="My Cart" class="cart-container">
+                <mat-icon  class="action-icon-border">shopping_cart</mat-icon>
+                <h6 class="action-icon-text">Cart</h6>
+            </div> -->
+        </div>
+    </div>
+</div>
+
+<div>
+    <router-outlet></router-outlet>
+</div>
+

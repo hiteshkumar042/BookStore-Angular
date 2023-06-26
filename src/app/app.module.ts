@@ -26,6 +26,14 @@ import { SortingPipe } from './pipes/sortingpipe/sorting.pipe';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { WishlistComponent } from './components/wishlist/wishlist.component';
 import {MatMenuModule} from '@angular/material/menu';
+import { AdmindashboardComponent } from './components/admindashboard/admindashboard.component';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import { AdminallbooksComponent } from './components/adminallbooks/adminallbooks.component';
+import { AdmindisplaybookComponent } from './components/admindisplaybook/admindisplaybook.component';
+import {MatTableModule} from '@angular/material/table';
+import {MatTooltipModule} from '@angular/material/tooltip';
+import {MatDialogModule} from '@angular/material/dialog';
+import { AdmindialogboxComponent } from './components/admindialogbox/admindialogbox.component';
 
 
 @NgModule({
@@ -41,12 +49,17 @@ import {MatMenuModule} from '@angular/material/menu';
     SearchingPipe,
     SortingPipe,
     WishlistComponent,
+    AdmindashboardComponent,
+    AdminallbooksComponent,
+    AdmindisplaybookComponent,
+    AdmindialogboxComponent,
   ],
   imports: [
     BrowserModule,BrowserAnimationsModule, AppRoutingModule,
     FormsModule,ReactiveFormsModule,HttpClientModule,
     MatButtonModule,MatTabsModule,MatCardModule,MatFormFieldModule,MatInputModule,MatIconModule,MatSnackBarModule,
-    MatBadgeModule,MatRadioModule,MatPaginatorModule,MatMenuModule
+    MatBadgeModule,MatRadioModule,MatPaginatorModule,MatMenuModule,MatSlideToggleModule,MatTableModule,MatTooltipModule,
+    MatDialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

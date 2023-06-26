@@ -1,0 +1,184 @@
+<div class="admindisplay-book">
+    <div class="header" >
+        <div>
+            <span class="display-book-row">
+                <!-- <div class="home">Home /</div> -->
+                <div class="books-count">Books ({{bookCount}})</div>
+            </span>
+        </div>
+
+        <button (click)="openDialog()" class="addbook">Add Book</button>
+    </div>
+
+    <div class="allbookstable">
+        <table mat-table [dataSource]="allBooks" class="mat-elevation-z8">
+
+            <!--- Note that these columns can be defined in any order.
+                  The actual rendered columns are set as a property on the row definition" -->
+          
+            <!-- image Column -->
+            <ng-container matColumnDef="image">
+              <th mat-header-cell *matHeaderCellDef>Poster</th>
+              <td mat-cell *matCellDef="let element"><img src="../../../assets/book image/Image 11.png" alt=""> </td>
+            </ng-container>
+          
+            <!-- BookName Column -->
+            <ng-container matColumnDef="bookName">
+              <th mat-header-cell *matHeaderCellDef>Book Name</th>
+              <td mat-cell *matCellDef="let element">{{element.bookName}} </td>
+            </ng-container>
+          
+            <!-- author Column -->
+            <ng-container matColumnDef="author">
+              <th mat-header-cell *matHeaderCellDef>Author</th>
+              <td mat-cell *matCellDef="let element"> {{element.author}} </td>
+            </ng-container>
+
+            <!-- author Column -->
+            <ng-container matColumnDef="description">
+                <th mat-header-cell *matHeaderCellDef>Description</th>
+                <td mat-cell *matCellDef="let element"> {{element.description}} </td>
+              </ng-container>
+          
+            <!-- Price Column -->
+            <ng-container matColumnDef="price">
+              <th mat-header-cell *matHeaderCellDef>M.R.P</th>
+              <td mat-cell *matCellDef="let element">&#8377; {{element.price}}</td>
+            </ng-container>
+
+            <!-- Discount Price Column -->
+            <ng-container matColumnDef="discountPrice">
+                <th mat-header-cell *matHeaderCellDef>Price</th>
+                <td mat-cell *matCellDef="let element">&#8377; {{element.discountPrice}}</td>
+              </ng-container>
+
+              <!-- Quantity Column -->
+            <ng-container matColumnDef="quantity">
+                <th mat-header-cell *matHeaderCellDef>Quantity</th>
+                <td mat-cell *matCellDef="let element">{{element.quantity}}</td>
+              </ng-container>
+
+              <!-- Action Column -->
+            <ng-container matColumnDef="actions">
+                <th mat-header-cell *matHeaderCellDef>Actions</th>
+                <td mat-cell *matCellDef="let element">
+                    <div class="actions-admin">
+                        <img src="../../../assets/edit_FILL0_wght500_GRAD-25_opsz24.svg" (click)="openDialog(element)" alt="">
+                        <img src="../../../assets/delete_FILL0_wght500_GRAD-25_opsz24.svg" (click)="deleteAdminBook(element._id)" alt="">
+                    </div>
+                    
+                </td>
+              </ng-container>
+          
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+          
+        <!-- ------------------------->
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="display">
+    
+    <div class="allBooks">
+        
+        <table mat-table [dataSource]="AllBooks | searchBook:Searchbookdetails | slice: lowValue : highValue " class="books-Table">
+            <ng-container matColumnDef="image">
+                <th mat-header-cell *matHeaderCellDef class="table-head"> Image </th>
+                <td mat-cell *matCellDef="let element" class="table-data">
+                    <img class="book-img" mat-card-image src="../../../assets/book_imgs/Image 11@2x.png" alt="">
+                </td>
+            </ng-container>
+
+             Name Column
+            <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef class="table-head"> Book Name </th>
+                <td mat-cell *matCellDef="let element" class="table-data"> {{element.bookName}} </td>
+            </ng-container>
+
+             Weight Column
+            <ng-container matColumnDef="author">
+                <th mat-header-cell *matHeaderCellDef class="table-head"> Author </th>
+                <td mat-cell *matCellDef="let element" class="table-data"> {{element.author}} </td>
+            </ng-container>
+
+            Symbol Column
+            <ng-container matColumnDef="Price">
+                <th mat-header-cell *matHeaderCellDef class="table-head"> Price</th>
+                <td mat-cell *matCellDef="let element" class="table-data"> {{element.price}} </td>
+            </ng-container>
+            <ng-container matColumnDef="discountPrice">
+                <th mat-header-cell *matHeaderCellDef class="table-head"> Discount</th>
+                <td mat-cell *matCellDef="let element" class="table-data"> {{element.discountPrice}} </td>
+            </ng-container>
+            <ng-container matColumnDef="Quantity">
+                <th mat-header-cell *matHeaderCellDef class="table-head"> Quantity </th>
+                <td mat-cell *matCellDef="let element" class="table-data"> {{element.quantity}} </td>
+            </ng-container>
+            <ng-container matColumnDef="Actions">
+                <th mat-header-cell *matHeaderCellDef class="table-head"> Actions </th>
+                <td mat-cell *matCellDef="let element" class="table-data">
+                    <img class="side-btn" src="../../../assets/edit_FILL0_wght400_GRAD0_opsz48.svg"
+                        (click)="openDialog(element)">
+                    <img class="side-btn" src="../../../assets/delete_FILL0_wght400_GRAD0_opsz48.svg"
+                        (click)="remove(element._id)">
+                </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+    </div>
+    <div class="page">
+        <mat-paginator [length]="AllBooks.length" pageSize=4 (page)="getPaginatorData($event)"
+            [pageSizeOptions]="[4, 6, 8]" showFirstLastButtons="false">
+        </mat-paginator>
+    </div>
+ </div>LL -->

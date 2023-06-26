@@ -8,6 +8,9 @@ import { MycartComponent } from './components/mycart/mycart.component';
 import { OrderconfirmComponent } from './components/orderconfirm/orderconfirm.component';
 import { WishlistComponent } from './components/wishlist/wishlist.component';
 import { authGuard } from './auth/auth.guard';
+import { AdmindashboardComponent } from './components/admindashboard/admindashboard.component';
+import { AdminallbooksComponent } from './components/adminallbooks/adminallbooks.component';
+import { adminguardGuard } from './authentication/adminguard.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -24,6 +27,13 @@ const routes: Routes = [
             
     ]
   },
+  {
+    path:'admin_dashboard',component:AdmindashboardComponent,canActivate:[adminguardGuard],
+    children:[
+      {path:'',redirectTo:"allbooks",pathMatch:"full"},
+      {path:'allbooks',component:AdminallbooksComponent}
+    ]
+  }
 
 ]
 

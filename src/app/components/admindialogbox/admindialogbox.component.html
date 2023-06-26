@@ -1,0 +1,104 @@
+<div class="dialog-container">
+    <div class="book-logo">
+        <!-- <img src="../../../assets/book image/Image 11.png" alt=""> -->
+        <div *ngIf="showAddBook">Add Book</div>
+        <div *ngIf="!showAddBook">Update Book</div>
+    </div>
+    <form [formGroup]="bookForm">
+        <div class="form-data">
+            <div class="name-author">
+                <div class="name">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Book Name</mat-label>
+                        <input matInput placeholder="Book Name" formControlName="bookName">
+                        <mat-error>Hint</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="author">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Author Name</mat-label>
+                        <input matInput placeholder="Author Name" formControlName="author">
+                        <mat-error>Hint</mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+            <!-- price -->
+            <div class="price-container">
+                <div class="mrp">
+                    <mat-form-field appearance="outline">
+                        <mat-label>M.R.P</mat-label>
+                        <input matInput placeholder="M.R.P" formControlName="price">
+                        <mat-error>Hint</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="price">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Price</mat-label>
+                        <input matInput placeholder="Price" formControlName="discountPrice">
+                        <mat-error>Hint</mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="description">
+                <mat-form-field appearance="outline" style="width: 100%;">
+                    <mat-label>Description</mat-label>
+                    <textarea matInput placeholder="Description" formControlName="description"></textarea>
+                    <mat-error>Hint</mat-error>
+                </mat-form-field>
+            </div>
+            <div class="qty-close">
+                
+                    <mat-form-field appearance="outline">
+                        <mat-label>Book Quantity</mat-label>
+                        <input matInput placeholder="Quantity" formControlName="quantity">
+                        <mat-error>Hint</mat-error>
+                    </mat-form-field>
+                
+                <button (click)="saveBook()" class="save-book">Save</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+
+
+
+
+<!-- <div class="name-author">
+    <div class="book-name">
+        <mat-form-field appearance="outline">
+            <mat-label>Book Name</mat-label>
+            <input matInput placeholder="Book Name">
+            <mat-error>Hint</mat-error>
+        </mat-form-field>
+    </div>
+    <div class="book-author">
+        <mat-form-field appearance="outline">
+            <mat-label>Author Name</mat-label>
+            <input matInput placeholder="Author Name">
+            <mat-error>Hint</mat-error>
+        </mat-form-field>
+    </div>
+    <div class="book-qty">
+        <mat-form-field appearance="outline">
+            <mat-label>Book Quantity</mat-label>
+            <input matInput placeholder="Quantity">
+            <mat-error>Hint</mat-error>
+        </mat-form-field>
+    </div>
+    <div class="book-mrp">
+        <mat-form-field appearance="outline">
+            <mat-label>M.R.P</mat-label>
+            <input matInput placeholder="M.R.P">
+            <mat-error>Hint</mat-error>
+        </mat-form-field>
+    </div>
+    <div class="book-price">
+        <mat-form-field appearance="outline">
+            <mat-label>Price</mat-label>
+            <input matInput placeholder="Price">
+            <mat-error>Hint</mat-error>
+        </mat-form-field>
+    </div>
+</div> -->

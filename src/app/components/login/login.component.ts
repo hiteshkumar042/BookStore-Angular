@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router,RouterLink } from '@angular/router';
+import { AdminService } from 'src/app/services/adminservices/admin.service';
 import { UserService } from 'src/app/services/userservices/user.service';
 
 @Component({
@@ -10,6 +11,8 @@ import { UserService } from 'src/app/services/userservices/user.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
+  isChecked=false;
+  LogInStatus = "User Account"
   hideLogInpwd = true;
   hideSignUpPwd = true;
   //Erorr hint for login
@@ -29,7 +32,8 @@ export class LoginComponent {
     private formBuilder: FormBuilder,
      private userService: UserService,
      private snackBar:MatSnackBar,
-     private router:Router
+     private router:Router,
+     private adminService:AdminService
     ) { }
 
   ngOnInit() {
@@ -48,17 +52,34 @@ export class LoginComponent {
   //on click of Login button
   logInClick() {
     if (this.LoginFormData.valid) {
-      this.userService.loginService(this.LoginFormData.value).subscribe((data: any) => {
-        console.log(data);
+      if(this.isChecked==false){
+        this.userService.loginService(this.LoginFormData.value).subscribe((data: any) => {
+          console.log(data);
+          //to store the token in local storage
+          localStorage.setItem('token', data.result.accessToken);
+          //Navigate to dashboard page
+          this.router.navigateByUrl('/dashboard')
+          //snackbar when account is logged in
+          this.snackBar.open('User Log In succesfull', 'Ok', {
+            duration: 3000
+          });
+          
+        })
+      }
+      else{
+       this.adminService.adminLoginService(this.LoginFormData.value).subscribe((result:any)=>{
         //to store the token in local storage
-        localStorage.setItem('token', data.result.accessToken);
+        localStorage.setItem('token', result.result.accessToken);
+        //Navigate to dashboard page
+        this.router.navigateByUrl('admin_dashboard')
         //snackbar when account is logged in
-        this.snackBar.open('Logged in succesfully', 'Ok', {
+        this.snackBar.open('Admin Log in succesfull', 'Ok', {
           duration: 3000
         });
-        //Navigate to dashboard page
-        this.router.navigateByUrl('/dashboard')
-      })
+        
+       })
+      }
+      
     }
     else {
       this.emailError = "Invalid email";
@@ -86,5 +107,15 @@ export class LoginComponent {
       return;
     }
   }
+  changelogIn(){
+    this.isChecked=!this.isChecked
+    if(this.isChecked==false){
+      this.LogInStatus="User Account"
+    }
+    else{
+      this.LogInStatus="Admin Account"
+    }
+  }
+  
 
 }

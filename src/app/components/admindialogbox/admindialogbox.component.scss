@@ -1,0 +1,56 @@
+.dialog-container{
+    width: 550px;
+    height: 470px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    // align-items: center;
+
+}
+.form-data{
+    // border: 2px solid red;
+    width:500px;
+}
+.name-author{
+    display: flex;
+    justify-content: space-between;
+}
+.price-container{
+    display: flex;
+    justify-content: space-between;
+}
+.qty-close{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.save-book{
+    width: 127px;
+    height: 33px;
+    border: 1px solid #a03037;
+    border-radius: 2px;
+    outline: none;
+    opacity: 1;
+    color: white;
+    border-radius: 2px;
+    background-color: #a03037;
+    transition: background-color 0.3s ease;
+}
+.save-book:hover{
+    background-color: #c52c36;
+    cursor: pointer;
+}
+// .book-logo>img{
+//     width: 65px;
+//     height: 85px;
+//     margin-bottom: 1em;
+// }
+
+.book-logo{
+    font-size: 1.5em;
+    font-family: Roboto;
+    text-align: left;
+    margin: 1em 0 1.8em 0;
+    font-weight: bold;
+}

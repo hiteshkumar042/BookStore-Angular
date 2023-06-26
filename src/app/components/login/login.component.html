@@ -30,7 +30,9 @@
                                     <mat-icon>{{hideLogInpwd ? 'visibility_off' : 'visibility'}}</mat-icon>
                                 </button>
                             </mat-form-field>
+                            <mat-slide-toggle (click)="changelogIn()" >{{LogInStatus}}</mat-slide-toggle>
                             <p style="text-align: right; margin-bottom: 1em;">Forget Password ?</p>
+                            
                         </div>
                         <div class="login-btn">
                             <button type="submit" (click)="logInClick()" mat-raised-button color="primary"

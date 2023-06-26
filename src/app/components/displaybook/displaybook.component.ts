@@ -12,7 +12,7 @@ export class DisplaybookComponent implements OnInit {
   constructor(private bookService:BookService,private dataService:DataService,private router:Router){}
   booksCount:number=0;
   lowValue:number=0;
-  highValue:number=8;
+  highValue:number=15;
   ngOnInit(): void {
   this.Searchbook();
   this.getAllBooks();
